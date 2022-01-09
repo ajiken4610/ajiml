@@ -309,7 +309,7 @@ public class AjiML {
 			defaultDynamicCharMap.put("", "!");
 			defaultDynamicCharMap.put("br", System.lineSeparator());
 			defaultDynamicCharMap.put("sp", " ");
-			defaultDynamicCharMap.put("idsp", "縲�");
+			defaultDynamicCharMap.put("idsp", "　");
 			defaultDynamicCharMap.put("#", "#");
 			defaultDynamicCharMap.put("$", "$");
 			defaultDynamicCharMap.put("}", "}");
