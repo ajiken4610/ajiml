@@ -1,3 +1,4 @@
+package com.ajiken4610.gachasys;
 
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
@@ -35,7 +36,7 @@ public class AjiML {
 	public static Spanned fromAjiML(String text, SpanPickerListenerSet pickerListenerSet) {
 		AjiMLSolver solver = new AjiMLSolver(text);
 		solver.setPickerListenerSet(pickerListenerSet);
-		// ‰ğÍ
+		// éš—ï½£è­«ï¿½
 		return solver.solve();
 	}
 
@@ -138,7 +139,7 @@ public class AjiML {
 		}
 
 		private String getBefore(char detect) {
-			// append‚µ‚È‚¢‚Ì‚Åfalse
+			// appendç¸ºåŠ±â†‘ç¸ºï¿½ç¸ºï½®ç¸ºï½§false
 			iterator.setIsAppending(false);
 			StringBuilder retBuilder = new StringBuilder();
 			boolean isInDynamicTag = false;
@@ -161,7 +162,7 @@ public class AjiML {
 			int ret = -1;
 			loop: while (iterator.hasNext()) {
 				char current = iterator.next();
-				// “Áê•¶š‚É‚ ‚½‚Á‚½‚ç‚»‚ê‚ğ•Ô‚·
+				// è¿šï½¹è°¿é ‘æšèŸ„åŠ±â†“ç¸ºã‚…â—†ç¸ºï½£ç¸ºæº˜ï½‰ç¸ºæ˜´ï½Œç¹§å®šï½¿æ–â˜†
 				for (char currentSpecial : SPECIAL_CHARACTERS) {
 					if (currentSpecial == current) {
 						ret = currentSpecial;
@@ -204,7 +205,7 @@ public class AjiML {
 			return builder;
 		}
 
-		private void insertEffects() { // ƒGƒtƒFƒNƒg‚ğ‘}“ü
+		private void insertEffects() { // ç¹§ï½¨ç¹è¼”ã‰ç¹§ï½¯ç¹åŒ»ï½’è¬–ï½¿èœˆï½¥
 			for (CharEffect effect : effects) {
 				for (Object what : effect.effects) {
 					builder.setSpan(what, effect.start, effect.end, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
@@ -227,8 +228,8 @@ public class AjiML {
 		}
 
 		private void buildSpannable() {
-			// I‚è‚ª—ˆ‚é‚Ü‚ÅŒJ‚è•Ô‚·
-			// ƒGƒtƒFƒNƒg‚Ìí—Ş‚ÆêŠ‚ğ’²‚×‚é
+			// é‚¨ã‚…ï½Šç¸ºæ¢§æ“‚ç¹§ä¹âˆªç¸ºï½§éƒ¢ï½°ç¹§é¡˜ï½¿æ–â˜†
+			// ç¹§ï½¨ç¹è¼”ã‰ç¹§ï½¯ç¹åŒ»ï¿½ï½®éï½®é¬˜æ§­â†’è£ï½´è¬‡ï¿½ç¹§å®šï½ªï½¿ç¸ºï½¹ç¹§ï¿½
 			int currentSpecialInt;
 			while ((currentSpecialInt = appendBeforeSpecialCharacter()) != -1) {
 				switch (currentSpecialInt) {
@@ -279,12 +280,12 @@ public class AjiML {
 		private static char[] SPECIAL_CHARACTERS = { '#', '$', '}' };
 
 		private int appendBeforeSpecialCharacter() {
-			// append‚·‚é‚Ì‚Åtrue
+			// appendç¸ºå¶ï½‹ç¸ºï½®ç¸ºï½§true
 			iterator.setIsAppending(true);
 			int ret = -1;
 			loop: while (iterator.hasNext()) {
 				char current = iterator.next();
-				// “Áê•¶š‚É‚ ‚½‚Á‚½‚ç‚»‚ê‚ğ•Ô‚·
+				// è¿šï½¹è°¿é ‘æšèŸ„åŠ±â†“ç¸ºã‚…â—†ç¸ºï½£ç¸ºæº˜ï½‰ç¸ºæ˜´ï½Œç¹§å®šï½¿æ–â˜†
 				for (char currentSpecial : SPECIAL_CHARACTERS) {
 					if (currentSpecial == current) {
 						ret = currentSpecial;
@@ -292,7 +293,7 @@ public class AjiML {
 						break loop;
 					}
 				}
-				// !‚É‚ ‚½‚Á‚½‚ç’uŠ·
+				// !ç¸ºï½«ç¸ºã‚…â—†ç¸ºï½£ç¸ºæº˜ï½‰é„‚ï½®è¬ ï¿½
 				if (current == '!') {
 					appendDynamicChar();
 				} else {
@@ -308,7 +309,7 @@ public class AjiML {
 			defaultDynamicCharMap.put("", "!");
 			defaultDynamicCharMap.put("br", System.lineSeparator());
 			defaultDynamicCharMap.put("sp", " ");
-			defaultDynamicCharMap.put("idsp", "@");
+			defaultDynamicCharMap.put("idsp", "ç¸²ï¿½");
 			defaultDynamicCharMap.put("#", "#");
 			defaultDynamicCharMap.put("$", "$");
 			defaultDynamicCharMap.put("}", "}");
@@ -339,7 +340,7 @@ public class AjiML {
 		}
 
 		private String getBefore(char detect) {
-			// append‚µ‚È‚¢‚Ì‚Åfalse
+			// appendç¸ºåŠ±â†‘ç¸ºï¿½ç¸ºï½®ç¸ºï½§false
 			iterator.setIsAppending(false);
 			char current;
 			StringBuilder retBuilder = new StringBuilder();
@@ -350,11 +351,11 @@ public class AjiML {
 		}
 
 		private boolean appendBefore(char detect) {
-			// append‚·‚é‚Ì‚Åtrue
+			// appendç¸ºå¶ï½‹ç¸ºï½®ç¸ºï½§true
 			iterator.setIsAppending(true);
 			char current = 0;
 			while (iterator.hasNext() && (current = iterator.next()) != detect) {
-				// !‚É‚ ‚½‚Á‚½‚ç’uŠ·
+				// !ç¸ºï½«ç¸ºã‚…â—†ç¸ºï½£ç¸ºæº˜ï½‰é„‚ï½®è¬ ï¿½
 				if (current == '!') {
 					appendDynamicChar();
 				} else {
@@ -445,7 +446,7 @@ public class AjiML {
 		public CharEffect(String what, SpanPickerListenerSet pickerListenerSet) {
 			this.effectText = what;
 			this.pickerListenerSet = pickerListenerSet;
-			// Ú“ª«‚²‚Æ‚Éƒ‹[ƒv
+			// è¬—ï½¥é¬†ï½­éœæ§­ï¼ƒç¸ºï½¨ç¸ºï½«ç¹ï½«ç¹ï½¼ç¹ï¿½
 			for (String option : what.split("#")) {
 				String[] splitedFont = option.split("\\|");
 				String prefix = splitedFont[0];
