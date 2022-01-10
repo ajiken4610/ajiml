@@ -1,5 +1,5 @@
 # AjiMarkupLanguage
-AjiMarkupLanguage、略してAjiMLは、Androidにおける文字装飾の規格である。  
+AjiMarkupLanguage、略してAjiMLは、Android上で動く文字装飾の規格である。  
 HTMLは冗長で書きづらい表現がよく見受けられるため，HTMLを機能を絞って拡張したAjiMLを開発した。
 ## 概要
 AjiMLはHTMLと同じように，文字のマークアップ言語である。  
