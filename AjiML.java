@@ -1,4 +1,4 @@
-package com.ajiken4610.gachasys;
+package com.ajiken4610.ajiml;
 
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
